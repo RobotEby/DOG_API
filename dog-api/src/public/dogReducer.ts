@@ -38,7 +38,7 @@ function dogReducer(state = initialStore, action: ActionType) {
       };
 
     default:
-      return false;
+      return state;
   }
 }
 
