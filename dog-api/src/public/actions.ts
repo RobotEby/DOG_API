@@ -2,7 +2,7 @@ export const REQUEST_STARTED = 'REQUEST_STARTED';
 export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
 
-import { Dispatch } from '../types/types';
+import { type Dispatch } from '../types/types';
 
 function requestStarted() {
   return { type: REQUEST_STARTED };
