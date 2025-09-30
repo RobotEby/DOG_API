@@ -1,5 +1,6 @@
 import { useDispatch, UseDispatch, useSelector } from 'react-redux';
 import { Dispatch, ReduxState } from 'redux';
+import { fetchDogImage } from './public/actions';
 
 function App() {
   const rootState = useSelector((state: ReduxState) => state);
@@ -7,7 +8,13 @@ function App() {
 
   return (
     <div>
-      <button>New dog</button>
+      <button
+        onClick={() => {
+          dispatch(fetchDogImage());
+        }}
+      >
+        New dog
+      </button>
     </div>
   );
 }
