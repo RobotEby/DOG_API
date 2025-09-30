@@ -29,8 +29,12 @@ export function fetchDogImage() {
       const response = await fetch('https://dog.ceo/api/breeds/image/random');
       const data = await response.json();
       dispatch(requestSuccessful(data));
-    } catch (error: any) {
-      dispatch(requestFailed(error.message));
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        dispatch(requestFailed(error.message));
+      } else {
+        dispatch(requestFailed('Unknown error'));
+      }
     }
   };
 }
